@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Daomar builds principled developer tools. AgentFleet is the first product: distributed agent orchestration without a control plane." />
+  <title>Daomar</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1313;
+      --bg-soft: #131b1b;
+      --ink: #f5efe2;
+      --muted: #a7baaf;
+      --line: rgba(245, 239, 226, 0.14);
+      --accent: #e7773a;
+      --accent-soft: #f5b35d;
+      --mint: #7ea996;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top right, rgba(245, 179, 93, 0.18), transparent 32%),
+        radial-gradient(circle at 18% 78%, rgba(126, 169, 150, 0.16), transparent 28%),
+        linear-gradient(160deg, var(--bg) 0%, #0b1010 100%);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      padding: 32px;
+    }
+
+    main {
+      width: min(980px, 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 44px;
+      background: linear-gradient(180deg, rgba(19, 27, 27, 0.92), rgba(10, 15, 15, 0.96));
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .eyebrow {
+      color: var(--mint);
+      letter-spacing: 0.28em;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 5.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    .hanzi {
+      display: block;
+      margin-top: 12px;
+      color: var(--accent-soft);
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      letter-spacing: 0.18em;
+    }
+
+    .lede {
+      max-width: 56rem;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(231, 119, 58, 0.4);
+      background: linear-gradient(135deg, rgba(210, 76, 42, 0.3), rgba(245, 179, 93, 0.16));
+    }
+
+    .button.secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 34px;
+      color: rgba(167, 186, 175, 0.78);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 18px; }
+      main { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Daomar</p>
+    <h1>
+      Build with principle.
+      <span class="hanzi">刀马 · 道码</span>
+    </h1>
+    <p class="lede">
+      Daomar is a small developer-tools brand focused on sharp, principled systems.
+      The name carries two readings: <strong>刀马</strong>, the boldness of a swordsman, and
+      <strong>道码</strong>, code shaped by craft and technical honor.
+    </p>
+
+    <section class="grid" aria-label="Products and links">
+      <article class="card">
+        <h2>AgentFleet</h2>
+        <p>
+          The first Daomar product. Distributed agent orchestration without a control plane,
+          built for multi-machine coding workflows.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Open source</h2>
+        <p>
+          Development happens in public under the Daomar GitHub organization, with AgentFleet
+          as the first production-facing repository.
+        </p>
+      </article>
+    </section>
+
+    <div class="links">
+      <a class="button" href="https://agentfleet.daomar.dev/">Open AgentFleet</a>
+      <a class="button secondary" href="https://github.com/daomar-dev">GitHub Organization</a>
+    </div>
+
+    <footer>
+      Daomar is starting with one product and one principle: useful tools should stay precise,
+      legible, and operationally simple.
+    </footer>
+  </main>
+</body>
+</html>
