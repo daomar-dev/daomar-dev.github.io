@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ｜Daomar.dev</title>
+  <meta name="description" content="Daomar.dev 常见问题：愿景、项目、AgentFleet、Lucky Draw、SEO/GEO 与动态内容来源。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://daomar.dev/faq.html" />
+  <script type="application/ld+json" id="faq-schema"></script>
+  <style>
+    :root { --bg:#f7f3ec; --paper:#fffdf8; --ink:#17211f; --muted:#5d6b66; --line:#ded5c7; --accent:#9b4b25; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--bg); line-height:1.65; }
+    .wrap { width:min(900px, calc(100% - 32px)); margin:0 auto; }
+    header, footer { padding:22px 0; }
+    nav { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    a { color:var(--accent); font-weight:700; text-decoration:none; }
+    main { padding:42px 0 70px; }
+    h1 { font-size:clamp(2.2rem, 7vw, 4.6rem); line-height:1.05; letter-spacing:-0.06em; margin:0 0 16px; }
+    .lede { color:var(--muted); margin:0 0 28px; font-size:1.08rem; }
+    .faq-list { display:grid; gap:14px; }
+    details { border:1px solid var(--line); border-radius:18px; padding:18px 20px; background:var(--paper); }
+    summary { cursor:pointer; font-weight:800; }
+    details p { color:var(--muted); margin:12px 0 0; }
+    footer { border-top:1px solid var(--line); color:var(--muted); }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav aria-label="主导航">
+      <a href="/">Daomar.dev</a>
+      <span><a href="/sources.html">动态来源</a> · <a href="https://github.com/daomar-dev">GitHub</a></span>
+    </nav>
+  </header>
+  <main class="wrap">
+    <h1>Daomar.dev FAQ</h1>
+    <p class="lede">本页 FAQ 由页面内数据动态生成，便于后续根据项目状态继续扩展。</p>
+    <section class="faq-list" id="faq-list" aria-label="常见问题"></section>
+  </main>
+  <footer><div class="wrap">© 2026 Daomar.dev</div></footer>
+  <script>
+    const faqs = [
+      {
+        question: 'Daomar.dev 是什么？',
+        answer: 'Daomar.dev 是一个用于孵化 AI 创新业务和应用的入口，关注真实工作流、简洁体验和可持续运维。'
+      },
+      {
+        question: '目前有哪些项目？',
+        answer: '目前包括 AgentFleet 和 Lucky Draw。AgentFleet 是公开的 AI 编程代理多设备编排项目；Lucky Draw 是面向公平随机抽选的在线应用。'
+      },
+      {
+        question: 'AgentFleet 解决什么问题？',
+        answer: 'AgentFleet 让多台设备围绕同一个 prompt 并行运行本地 AI coding agents，并把结果同步后对比，不需要托管后端、SSH mesh 或控制平面。'
+      },
+      {
+        question: 'Lucky Draw 是什么？',
+        answer: 'Lucky Draw 是一个简单的在线抽奖与随机选择工具。用户输入候选名单后即可随机抽取结果，适合活动、课堂和社群赠品等场景。'
+      },
+      {
+        question: '为什么网站保持简单？',
+        answer: 'Daomar.dev 是落地页，核心目标是快速说明愿景和项目列表，并让手机访问、搜索引擎和生成式 AI 摘要都能清楚理解内容。'
+      },
+      {
+        question: '这个网站做了哪些 SEO 和 GEO？',
+        answer: '页面包含清晰标题、描述、canonical、Open Graph、结构化数据、sitemap、robots.txt 和 llms.txt，并用自然语言解释项目定位，便于搜索引擎和生成式引擎理解。'
+      },
+      {
+        question: '动态内容页面的数据来自哪里？',
+        answer: '动态来源页会尝试读取公开项目内容，例如 AgentFleet 的 GitHub README，以及 Lucky Draw 网站公开可访问的 sitemap、RSS 或博客入口；不可访问时会展示公开信息摘要。'
+      }
+    ];
+
+    const list = document.querySelector('#faq-list');
+    for (const item of faqs) {
+      const details = document.createElement('details');
+      const summary = document.createElement('summary');
+      const body = document.createElement('p');
+      summary.textContent = item.question;
+      body.textContent = item.answer;
+      details.append(summary, body);
+      list.append(details);
+    }
+
+    document.querySelector('#faq-schema').textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer }
+      }))
+    });
+  </script>
+</body>
+</html>

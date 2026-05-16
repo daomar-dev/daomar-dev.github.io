@@ -1,183 +1,359 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Daomar builds principled developer tools. AgentFleet is the first product: distributed agent orchestration without a control plane." />
-  <title>Daomar</title>
+  <title>Daomar.dev｜AI 创新业务与应用孵化</title>
+  <meta name="description" content="Daomar.dev 孵化 AI 创新业务与应用，当前项目包括 AgentFleet 多设备 AI 编程代理编排工具，以及 Lucky Draw 公平抽奖应用。" />
+  <meta name="keywords" content="Daomar, daomar.dev, AI应用孵化, AI创新业务, AgentFleet, Lucky Draw, AI coding agents, GEO, SEO" />
+  <meta name="author" content="Daomar" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://daomar.dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Daomar.dev" />
+  <meta property="og:title" content="Daomar.dev｜AI 创新业务与应用孵化" />
+  <meta property="og:description" content="一个专注 AI 创新应用孵化的轻量品牌，当前项目包括 AgentFleet 和 Lucky Draw。" />
+  <meta property="og:url" content="https://daomar.dev/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Daomar.dev｜AI 创新业务与应用孵化" />
+  <meta name="twitter:description" content="孵化简洁、实用、可持续的 AI 创新业务与应用。" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Daomar.dev",
+    "url": "https://daomar.dev/",
+    "description": "Daomar.dev incubates AI-native products and applications with a focus on practical workflows, clarity, and operational simplicity.",
+    "sameAs": ["https://github.com/daomar-dev"],
+    "knowsAbout": ["AI applications", "AI coding agents", "product incubation", "developer tools", "random draw software"],
+    "makesOffer": [
+      {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "AgentFleet", "url": "https://github.com/daomar-dev/agentfleet", "applicationCategory": "DeveloperApplication"}},
+      {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "name": "Lucky Draw", "url": "https://luckydraw.daomar.dev/", "applicationCategory": "WebApplication"}}
+    ]
+  }
+  </script>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #0d1313;
-      --bg-soft: #131b1b;
-      --ink: #f5efe2;
-      --muted: #a7baaf;
-      --line: rgba(245, 239, 226, 0.14);
-      --accent: #e7773a;
-      --accent-soft: #f5b35d;
-      --mint: #7ea996;
+      color-scheme: light;
+      --bg: #f7f3ec;
+      --paper: #fffdf8;
+      --ink: #17211f;
+      --muted: #5d6b66;
+      --line: #ded5c7;
+      --accent: #9b4b25;
+      --accent-soft: #f3e2d2;
+      --green: #2f6f5f;
+      --shadow: 0 24px 60px rgba(23, 33, 31, 0.10);
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: Georgia, "Times New Roman", serif;
-      background:
-        radial-gradient(circle at top right, rgba(245, 179, 93, 0.18), transparent 32%),
-        radial-gradient(circle at 18% 78%, rgba(126, 169, 150, 0.16), transparent 28%),
-        linear-gradient(160deg, var(--bg) 0%, #0b1010 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      display: grid;
-      place-items: center;
-      padding: 32px;
+      background:
+        radial-gradient(circle at 88% 8%, rgba(155, 75, 37, 0.12), transparent 30%),
+        radial-gradient(circle at 10% 84%, rgba(47, 111, 95, 0.12), transparent 26%),
+        var(--bg);
+      line-height: 1.65;
     }
 
-    main {
-      width: min(980px, 100%);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 44px;
-      background: linear-gradient(180deg, rgba(19, 27, 27, 0.92), rgba(10, 15, 15, 0.96));
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .eyebrow {
-      color: var(--mint);
-      letter-spacing: 0.28em;
-      font-size: 12px;
-      text-transform: uppercase;
-      margin: 0 0 18px;
+    header {
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      backdrop-filter: blur(16px);
+      background: rgba(247, 243, 236, 0.82);
+      border-bottom: 1px solid rgba(222, 213, 199, 0.65);
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(3rem, 7vw, 5.2rem);
-      line-height: 0.96;
-      letter-spacing: -0.04em;
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .hanzi {
-      display: block;
-      margin-top: 12px;
-      color: var(--accent-soft);
-      font-size: clamp(1.4rem, 3vw, 2.1rem);
-      letter-spacing: 0.18em;
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      font-size: 1.1rem;
     }
 
-    .lede {
-      max-width: 56rem;
-      margin: 28px 0 0;
-      color: var(--muted);
-      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
-      line-height: 1.7;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-top: 36px;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .card h2 {
-      margin: 0 0 10px;
-      font-size: 1.5rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .links {
+    .nav-links {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 34px;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
-    a {
-      color: var(--ink);
-      text-decoration: none;
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--accent); }
+
+    main { padding: 70px 0 44px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--green);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    h1, h2, h3 { line-height: 1.14; }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(2.4rem, 8vw, 5.6rem);
+      letter-spacing: -0.07em;
+    }
+
+    .lede {
+      max-width: 740px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    }
+
+    .panel {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 253, 248, 0.78);
+      box-shadow: var(--shadow);
+    }
+
+    .panel p { margin: 0; color: var(--muted); }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 14px 18px;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(231, 119, 58, 0.4);
-      background: linear-gradient(135deg, rgba(210, 76, 42, 0.3), rgba(245, 179, 93, 0.16));
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fffaf2;
+      text-decoration: none;
+      font-weight: 700;
     }
 
     .button.secondary {
-      border-color: var(--line);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--muted);
+      background: transparent;
+      color: var(--accent);
     }
+
+    section { padding: 66px 0 0; }
+
+    .section-head {
+      max-width: 740px;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p { margin: 0; color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      background: rgba(255, 253, 248, 0.76);
+    }
+
+    .card h3 { margin: 0 0 10px; font-size: 1.35rem; }
+    .card p { margin: 0 0 16px; color: var(--muted); }
+    .card ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .card li + li { margin-top: 6px; }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #6f371d;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .quiet-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .principle {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(47, 111, 95, 0.08);
+      border: 1px solid rgba(47, 111, 95, 0.18);
+    }
+
+    .principle strong { display: block; margin-bottom: 6px; }
+    .principle span { color: var(--muted); }
 
     footer {
-      margin-top: 34px;
-      color: rgba(167, 186, 175, 0.78);
-      font-size: 0.95rem;
+      margin-top: 70px;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.94rem;
     }
 
-    @media (max-width: 640px) {
-      body { padding: 18px; }
-      main { padding: 28px; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      header { position: static; }
+      nav { align-items: flex-start; flex-direction: column; }
+      main { padding-top: 44px; }
+      .hero, .grid, .principles { grid-template-columns: 1fr; }
+      .panel, .card { border-radius: 20px; padding: 20px; }
+      .actions .button { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <p class="eyebrow">Daomar</p>
-    <h1>
-      Build with principle.
-      <span class="hanzi">刀马 · 道码</span>
-    </h1>
-    <p class="lede">
-      Daomar is a small developer-tools brand focused on sharp, principled systems.
-      The name carries two readings: <strong>刀马</strong>, the boldness of a swordsman, and
-      <strong>道码</strong>, code shaped by craft and technical honor.
-    </p>
+  <header>
+    <nav class="wrap" aria-label="主导航">
+      <a class="brand" href="/">Daomar.dev</a>
+      <div class="nav-links">
+        <a href="#vision">Vision</a>
+        <a href="#projects">Projects</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/sources.html">Dynamic Sources</a>
+        <a href="https://github.com/daomar-dev">GitHub</a>
+      </div>
+    </nav>
+  </header>
 
-    <section class="grid" aria-label="Products and links">
-      <article class="card">
-        <h2>AgentFleet</h2>
-        <p>
-          The first Daomar product. Distributed agent orchestration without a control plane,
-          built for multi-machine coding workflows.
+  <main class="wrap">
+    <section class="hero" id="vision" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">AI venture & application incubation</p>
+        <h1 id="hero-title">孵化清晰、实用、可持续的 AI 创新应用。</h1>
+        <p class="lede">
+          Daomar.dev 是一个面向 AI 原生产品的孵化入口：从真实场景出发，把 AI 编程代理、自动化工作流和轻量业务应用打磨成可被直接使用的产品。
         </p>
-      </article>
-      <article class="card">
-        <h2>Open source</h2>
+        <div class="actions">
+          <a class="button" href="#projects">查看项目</a>
+          <a class="button secondary" href="/faq.html">阅读 FAQ</a>
+        </div>
+      </div>
+      <aside class="panel" aria-label="Daomar vision summary">
         <p>
-          Development happens in public under the Daomar GitHub organization, with AgentFleet
-          as the first production-facing repository.
+          我们关注三件事：让 AI 工具服务真实工作流，让产品保持简单可解释，让数据和执行路径尽量留在用户可控环境中。
         </p>
-      </article>
+      </aside>
     </section>
 
-    <div class="links">
-      <a class="button" href="https://agentfleet.daomar.dev/">Open AgentFleet</a>
-      <a class="button secondary" href="https://github.com/daomar-dev">GitHub Organization</a>
-    </div>
+    <section aria-labelledby="principles-title">
+      <div class="section-head">
+        <h2 id="principles-title">Daomar 的产品原则</h2>
+        <p>不追求炫技，而是把 AI 能力放进稳定、可理解、低摩擦的使用体验里。</p>
+      </div>
+      <div class="principles">
+        <div class="principle"><strong>真实场景优先</strong><span>从开发者、多设备协作、活动抽奖等明确需求切入。</span></div>
+        <div class="principle"><strong>简单大气</strong><span>页面和产品都尽量减少噪音，让用户快速理解价值。</span></div>
+        <div class="principle"><strong>可持续迭代</strong><span>优先选择低运维、易扩展、便于移动端访问的架构。</span></div>
+      </div>
+    </section>
 
-    <footer>
-      Daomar is starting with one product and one principle: useful tools should stay precise,
-      legible, and operationally simple.
-    </footer>
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <h2 id="projects-title">当前项目</h2>
+        <p>Daomar.dev 目前孵化两个应用：一个面向 AI 编程代理工作流，一个面向公平随机抽选场景。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>AgentFleet</h3>
+          <p>面向 AI coding agents 的多设备编排工具。提交同一个 prompt，让多台已加入的设备分别用本地代理执行任务，并汇总对比结果。</p>
+          <div class="meta">
+            <span class="tag">Open Source</span>
+            <span class="tag">Developer Tool</span>
+            <span class="tag">No hosted backend</span>
+          </div>
+          <ul>
+            <li>适合比较 Claude Code、GitHub Copilot CLI、Cursor、Aider 等代理输出。</li>
+            <li>通过 OneDrive 同步任务与结果，不需要服务器、SSH mesh 或控制平面。</li>
+            <li>支持命令行和 Web Dashboard。</li>
+          </ul>
+          <p><a class="quiet-link" href="https://github.com/daomar-dev/agentfleet">查看 GitHub 仓库 →</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Lucky Draw</h3>
+          <p>一个简洁的在线抽奖与随机选择应用，适合活动、课堂、社群赠品或任何需要公平随机抽取的场景。</p>
+          <div class="meta">
+            <span class="tag">Web App</span>
+            <span class="tag">Random Selection</span>
+            <span class="tag">Mobile Friendly</span>
+          </div>
+          <ul>
+            <li>输入参与者或候选项，一键随机抽取结果。</li>
+            <li>强调透明、公平、快速可用。</li>
+            <li>仓库暂未公开，Daomar.dev 仅展示公开网页可见信息。</li>
+          </ul>
+          <p><a class="quiet-link" href="https://luckydraw.daomar.dev/">打开 Lucky Draw →</a></p>
+        </article>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Daomar.dev · AI innovation incubation · <a href="/sources.html">Project sources</a> · <a href="/llms.txt">llms.txt</a>
+    </div>
+  </footer>
 </body>
 </html>
