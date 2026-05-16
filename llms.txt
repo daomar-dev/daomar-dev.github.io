@@ -1,0 +1,15 @@
+# Daomar.dev
+
+Daomar.dev incubates AI-native products and practical web applications. The site is intentionally simple, mobile-friendly, and optimized for both search engines and generative answer engines.
+
+## Vision
+Daomar.dev builds clear, useful, sustainable AI applications for real workflows. The current focus is AI coding-agent orchestration, lightweight automation, and small web products that remain easy to understand and operate.
+
+## Projects
+- AgentFleet: https://github.com/daomar-dev/agentfleet — open-source developer tool for orchestrating AI coding agents across multiple local machines without a hosted backend or SSH control plane.
+- Lucky Draw: https://luckydraw.daomar.dev/ — web app for fair random draws, giveaways, and random selection scenarios. Its repository is not public; Daomar.dev summarizes only public website information.
+
+## Site pages
+- Home: https://daomar.dev/
+- FAQ: https://daomar.dev/faq.html
+- Dynamic public sources: https://daomar.dev/sources.html
