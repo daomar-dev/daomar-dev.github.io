@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-05-17T02:31:54.990Z",
+  "generatedAt": "2026-05-17T02:37:14.137Z",
   "org": "daomar-dev",
   "repos": [
     {
       "name": "daomar-dev.github.io",
       "url": "https://github.com/daomar-dev/daomar-dev.github.io",
       "homepage": "http://daomar.dev/",
-      "description": "",
+      "description": "daomar.dev landing site The static landing page for daomar.dev — an independent AI venture studio.",
       "language": "HTML",
       "stars": 0,
-      "updatedAt": "2026-05-16T04:11:02Z",
+      "updatedAt": "2026-05-17T02:37:03Z",
       "topics": []
     },
     {
@@ -44,11 +44,18 @@
   ],
   "items": [
     {
-      "date": "2026-05-17T02:31:54.187Z",
+      "date": "2026-05-17T02:37:13.726Z",
       "source": "luckydraw.daomar.dev",
       "title": "Lucky Draw — 15 public URLs discovered",
       "summary": "Lucky Draw Bot A free Microsoft Teams app that runs fair, transparent prize draws inside any channel.",
       "url": "https://luckydraw.daomar.dev/"
+    },
+    {
+      "date": "2026-05-17T02:37:02Z",
+      "source": "daomar-dev.github.io · commit",
+      "title": "feat: bilingual marketing site, daily content pipeline, SEO/GEO",
+      "summary": "By chenxizhang",
+      "url": "https://github.com/daomar-dev/daomar-dev.github.io/commit/fb034522ce0cec49819ae6c93d419a7ee9f8901c"
     },
     {
       "date": "2026-05-16T04:11:01Z",
@@ -112,13 +119,6 @@
       "title": "feat: auto-init on first run, agent-first docs rewrite",
       "summary": "By chenxizhang",
       "url": "https://github.com/daomar-dev/agentfleet/commit/2a06a0398568dfcda439302f31ce4683f65b59c9"
-    },
-    {
-      "date": "2026-04-11T12:05:14Z",
-      "source": "daomar-dev.github.io · commit",
-      "title": "feat: add daomar landing page",
-      "summary": "By chenxizhang",
-      "url": "https://github.com/daomar-dev/daomar-dev.github.io/commit/8f55d9f5fc01a9d8f7a188f781c9d20185711ee0"
     }
   ]
 }

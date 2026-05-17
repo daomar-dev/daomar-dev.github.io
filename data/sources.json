@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T02:31:54.990Z",
+  "generatedAt": "2026-05-17T02:37:14.137Z",
   "agentfleet": {
     "name": "agentfleet",
     "url": "https://github.com/daomar-dev/agentfleet",
@@ -33,7 +33,7 @@
       "name": "daomar-dev.github.io",
       "url": "https://github.com/daomar-dev/daomar-dev.github.io",
       "homepage": "http://daomar.dev/",
-      "description": ""
+      "description": "daomar.dev landing site The static landing page for daomar.dev — an independent AI venture studio."
     },
     {
       "name": ".github",
