@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="updates.page.title">Updates — daomar.dev</title>
+  <meta name="description" content="Daily-refreshed activity feed for daomar.dev: commits, releases, public site posts and notable changes from AgentFleet, Lucky Draw and other projects under github.com/daomar-dev." />
+  <meta name="robots" content="index, follow, max-snippet:-1" />
+  <link rel="canonical" href="https://daomar.dev/updates.html" />
+  <link rel="alternate" hreflang="en" href="https://daomar.dev/updates.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://daomar.dev/updates.html?lang=zh" />
+  <link rel="alternate" hreflang="x-default" href="https://daomar.dev/updates.html" />
+  <link rel="alternate" type="application/json" title="daomar.dev updates feed" href="/data/updates.json" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="daomar.dev" />
+  <meta property="og:title" content="Updates — daomar.dev" />
+  <meta property="og:description" content="Daily-refreshed activity feed for daomar.dev projects." />
+  <meta property="og:url" content="https://daomar.dev/updates.html" />
+  <script type="application/ld+json" id="updates-schema"></script>
+  <style>
+    :root { --bg:#f7f3ec; --paper:#fffdf8; --ink:#17211f; --muted:#5d6b66; --line:#ded5c7; --accent:#9b4b25; --accent-soft:#f3e2d2; --green:#2f6f5f; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; color:var(--ink); background:
+      radial-gradient(circle at 88% 8%, rgba(155, 75, 37, 0.12), transparent 30%),
+      radial-gradient(circle at 10% 84%, rgba(47, 111, 95, 0.12), transparent 26%),
+      var(--bg);
+      line-height:1.65; }
+    .wrap { width:min(980px, calc(100% - 32px)); margin:0 auto; }
+    header { padding:18px 0; border-bottom:1px solid rgba(222,213,199,0.65); background: rgba(247,243,236,0.82); backdrop-filter: blur(16px); position:sticky; top:0; z-index:5; }
+    nav { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+    .brand { font-weight:800; letter-spacing:-0.03em; text-decoration:none; color:inherit; }
+    .brand::before { content:"● "; color:var(--accent); }
+    .nav-links { display:flex; align-items:center; flex-wrap:wrap; gap:14px; color:var(--muted); font-size:0.95rem; }
+    .nav-links a { color:inherit; text-decoration:none; font-weight:600; }
+    .nav-links a:hover { color:var(--accent); }
+    .lang-toggle { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; background:var(--paper); font-size:0.82rem; font-weight:700; }
+    .lang-toggle button { appearance:none; border:0; background:transparent; color:var(--muted); padding:6px 12px; cursor:pointer; font:inherit; }
+    .lang-toggle button[aria-pressed="true"] { background:var(--accent); color:#fffaf2; }
+    main { padding:56px 0 70px; }
+    h1 { font-size:clamp(2rem, 6.5vw, 4rem); line-height:1.08; letter-spacing:-0.05em; margin:0 0 14px; }
+    .lede { color:var(--muted); margin:0 0 12px; font-size:1.08rem; max-width:720px; }
+    .meta-line { color:var(--muted); font-size:0.9rem; margin:0 0 30px; }
+    h2 { font-size:1.4rem; margin:36px 0 12px; letter-spacing:-0.02em; }
+    .repo-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:14px; margin-bottom:24px; }
+    .repo-card { border:1px solid var(--line); border-radius:18px; padding:18px; background:var(--paper); }
+    .repo-card h3 { margin:0 0 6px; font-size:1.05rem; }
+    .repo-card h3 a { color:var(--accent); text-decoration:none; }
+    .repo-card p { margin:0 0 10px; color:var(--muted); font-size:0.95rem; }
+    .repo-card .stats { display:flex; flex-wrap:wrap; gap:6px; font-size:0.78rem; }
+    .pill { padding:3px 9px; border-radius:999px; background:var(--accent-soft); color:#6f371d; font-weight:700; }
+    .feed { display:grid; gap:12px; }
+    .entry { border:1px solid var(--line); border-radius:16px; background:var(--paper); padding:16px 18px; }
+    .entry time { display:block; font-size:0.82rem; color:var(--muted); margin-bottom:4px; }
+    .entry h4 { margin:0 0 6px; font-size:1rem; }
+    .entry h4 a { color:var(--ink); text-decoration:none; }
+    .entry h4 a:hover { color:var(--accent); }
+    .entry p { margin:0; color:var(--muted); font-size:0.95rem; }
+    .entry .src { display:inline-block; margin-right:6px; color:var(--green); font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; }
+    .empty { color:var(--muted); padding:30px; border:1px dashed var(--line); border-radius:18px; text-align:center; }
+    footer { padding:24px 0; border-top:1px solid var(--line); color:var(--muted); font-size:0.94rem; margin-top:50px; }
+    footer a { color:var(--accent); font-weight:700; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Primary">
+      <a class="brand" href="/">daomar.dev</a>
+      <div class="nav-links">
+        <a href="/#projects" data-i18n="nav.projects">Projects</a>
+        <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
+        <a href="/sources.html" data-i18n="nav.sources">Sources</a>
+        <a href="https://github.com/daomar-dev" rel="noopener">GitHub</a>
+        <span class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h1 data-i18n="updates.h1">What changed, lately.</h1>
+    <p class="lede" data-i18n="updates.lede">A daily-refreshed log of public activity across daomar.dev projects: commits, releases, public site posts, and notable changes. Built automatically from public sources.</p>
+    <p class="meta-line"><span data-i18n="updates.lastBuilt">Last refreshed</span>: <span id="last-built">—</span></p>
+
+    <h2 data-i18n="updates.byRepo">By project</h2>
+    <div class="repo-grid" id="repo-grid"></div>
+
+    <h2 data-i18n="updates.recent">Recent activity</h2>
+    <div class="feed" id="feed"></div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year">2026</span> daomar.dev ·
+      <a href="/">Home</a> ·
+      <a href="/faq.html" data-i18n="footer.faq">FAQ</a> ·
+      <a href="/sources.html" data-i18n="footer.sources">Sources</a> ·
+      <a href="/data/updates.json">JSON feed</a> ·
+      <a href="/llms.txt">llms.txt</a>
+    </div>
+  </footer>
+
+  <script src="/i18n.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function fmtDate(iso, lang) {
+      if (!iso) return '';
+      try { return new Date(iso).toLocaleDateString(lang === 'zh' ? 'zh-CN' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' }); }
+      catch (_) { return iso; }
+    }
+
+    async function load() {
+      const lang = window.daomarI18n.lang;
+      const repoGrid = document.getElementById('repo-grid');
+      const feed = document.getElementById('feed');
+      const lastBuilt = document.getElementById('last-built');
+      try {
+        const res = await fetch('/data/updates.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('no data');
+        const data = await res.json();
+
+        lastBuilt.textContent = data.generatedAt ? fmtDate(data.generatedAt, lang) : '—';
+
+        // Repos
+        repoGrid.innerHTML = '';
+        (data.repos || []).forEach((repo) => {
+          const card = document.createElement('article');
+          card.className = 'repo-card';
+          card.innerHTML = `
+            <h3><a href="${repo.url}" rel="noopener">${repo.name}</a></h3>
+            <p>${repo.description || ''}</p>
+            <div class="stats">
+              ${repo.language ? `<span class="pill">${repo.language}</span>` : ''}
+              ${typeof repo.stars === 'number' ? `<span class="pill">★ ${repo.stars}</span>` : ''}
+              ${repo.updatedAt ? `<span class="pill">${fmtDate(repo.updatedAt, lang)}</span>` : ''}
+            </div>`;
+          repoGrid.appendChild(card);
+        });
+
+        // Items
+        const items = data.items || [];
+        if (!items.length) {
+          feed.innerHTML = `<div class="empty">${window.daomarI18n.t('updates.empty')}</div>`;
+        } else {
+          feed.innerHTML = '';
+          items.forEach((item) => {
+            const el = document.createElement('article');
+            el.className = 'entry';
+            el.innerHTML = `
+              <time datetime="${item.date || ''}">${fmtDate(item.date, lang)}</time>
+              <h4>${item.url ? `<a href="${item.url}" rel="noopener"><span class="src">${item.source || 'update'}</span>${item.title}</a>` : `<span class="src">${item.source || 'update'}</span>${item.title}`}</h4>
+              ${item.summary ? `<p>${item.summary}</p>` : ''}`;
+            feed.appendChild(el);
+          });
+        }
+
+        // ItemList schema for SEO/GEO
+        document.querySelector('#updates-schema').textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'daomar.dev updates',
+          dateModified: data.generatedAt || undefined,
+          itemListElement: items.slice(0, 30).map((item, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            url: item.url,
+            name: item.title,
+            description: item.summary
+          }))
+        });
+      } catch (_) {
+        repoGrid.innerHTML = '';
+        feed.innerHTML = `<div class="empty">${window.daomarI18n.t('updates.empty')}</div>`;
+      }
+    }
+
+    document.addEventListener('daomar:i18n', load);
+    load();
+  </script>
+</body>
+</html>

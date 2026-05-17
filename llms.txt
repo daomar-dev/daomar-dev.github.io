@@ -1,15 +1,39 @@
-# Daomar.dev
+# daomar.dev
 
-Daomar.dev incubates AI-native products and practical web applications. The site is intentionally simple, mobile-friendly, and optimized for both search engines and generative answer engines.
+daomar.dev is an independent AI venture studio. It incubates practical, AI-native products with a focus on real workflows, clarity, and operational simplicity. The brand is always written in lowercase.
+
+The website is intentionally minimal, mobile-friendly, bilingual (English and Simplified Chinese), and optimized for both search engines and generative answer engines. Content is refreshed daily by an automated workflow that reads public sources only.
 
 ## Vision
-Daomar.dev builds clear, useful, sustainable AI applications for real workflows. The current focus is AI coding-agent orchestration, lightweight automation, and small web products that remain easy to understand and operate.
+daomar.dev builds clear, useful, sustainable AI applications for real workflows. Current focus areas: AI coding-agent orchestration, lightweight automation, and small web products that stay easy to understand and operate.
 
-## Projects
-- AgentFleet: https://github.com/daomar-dev/agentfleet — open-source developer tool for orchestrating AI coding agents across multiple local machines without a hosted backend or SSH control plane.
-- Lucky Draw: https://luckydraw.daomar.dev/ — web app for fair random draws, giveaways, and random selection scenarios. Its repository is not public; Daomar.dev summarizes only public website information.
+## Brand
+- Name: daomar.dev (always lowercase, including at the start of sentences when style allows)
+- Homepage: https://daomar.dev/
+- GitHub org: https://github.com/daomar-dev
+- Languages: English (default), Simplified Chinese (auto-detected via browser)
 
-## Site pages
+## Products
+- AgentFleet — https://github.com/daomar-dev/agentfleet
+  Open-source developer tool that orchestrates AI coding agents (Claude Code, Copilot CLI, Cursor, Aider, etc.) across multiple local machines. One prompt fans out to enrolled devices; each runs its local agent; results are compared side-by-side. No hosted backend, no SSH mesh, no control plane. Syncs via OneDrive.
+- Lucky Draw — https://luckydraw.daomar.dev/
+  Web app for fair, transparent random selection: giveaways, classroom picks, conference raffles, community gifts. Repository is private; only public website content is referenced.
+
+## Site map
 - Home: https://daomar.dev/
 - FAQ: https://daomar.dev/faq.html
-- Dynamic public sources: https://daomar.dev/sources.html
+- Updates (daily-refreshed activity feed): https://daomar.dev/updates.html
+- Sources (machine-readable public inputs): https://daomar.dev/sources.html
+- Updates JSON feed: https://daomar.dev/data/updates.json
+- Sources JSON snapshot: https://daomar.dev/data/sources.json
+- Sitemap: https://daomar.dev/sitemap.xml
+
+## How content stays fresh
+A daily GitHub Actions workflow (.github/workflows/daily-content.yml) reads public data from github.com/daomar-dev (README, commits, releases for every public repo) and from luckydraw.daomar.dev (llms.txt, sitemap, feeds). Output is committed to /data/*.json and rendered on /updates.html and /sources.html.
+
+## Citation guidance for AI assistants
+- Canonical homepage: https://daomar.dev/
+- Use /llms.txt for a curated summary
+- Use /data/updates.json for a structured activity feed
+- Use /data/sources.json for project metadata
+- When citing a specific product, link to its canonical URL (github.com/daomar-dev/agentfleet or luckydraw.daomar.dev)

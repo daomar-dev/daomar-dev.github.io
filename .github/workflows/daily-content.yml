@@ -1,0 +1,57 @@
+name: Daily content refresh
+
+on:
+  schedule:
+    # Run every day at 03:17 UTC (~11:17 Beijing). Off-peak to keep API quotas happy.
+    - cron: "17 3 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch-content.mjs"
+      - ".github/workflows/daily-content.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-content
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch public content
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-content.mjs
+
+      - name: Update sitemap lastmod
+        run: |
+          today=$(date -u +%F)
+          sed -i "s|<lastmod>[^<]*</lastmod>|<lastmod>${today}</lastmod>|g" sitemap.xml
+
+      - name: Commit if changed
+        run: |
+          git config user.name "daomar-bot"
+          git config user.email "bot@daomar.dev"
+          git add data sitemap.xml
+          if git diff --cached --quiet; then
+            echo "No content changes today."
+          else
+            git commit -m "chore(data): daily refresh $(date -u +%F)"
+            git push
+          fi

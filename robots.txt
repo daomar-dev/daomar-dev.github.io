@@ -1,4 +1,36 @@
+# daomar.dev — robots policy
+# All public content is allowed for indexing by search engines and
+# generative answer engines. JSON feeds under /data/ are explicitly allowed.
+
 User-agent: *
+Allow: /
+
+# Common AI / answer-engine crawlers — explicitly welcome.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://daomar.dev/sitemap.xml

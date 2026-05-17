@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-05-17T02:31:54.990Z",
+  "org": "daomar-dev",
+  "repos": [
+    {
+      "name": "daomar-dev.github.io",
+      "url": "https://github.com/daomar-dev/daomar-dev.github.io",
+      "homepage": "http://daomar.dev/",
+      "description": "",
+      "language": "HTML",
+      "stars": 0,
+      "updatedAt": "2026-05-16T04:11:02Z",
+      "topics": []
+    },
+    {
+      "name": ".github",
+      "url": "https://github.com/daomar-dev/.github",
+      "homepage": null,
+      "description": ".github",
+      "language": null,
+      "stars": 0,
+      "updatedAt": "2026-05-03T10:55:33Z",
+      "topics": []
+    },
+    {
+      "name": "agentfleet",
+      "url": "https://github.com/daomar-dev/agentfleet",
+      "homepage": "http://agentfleet.daomar.dev/",
+      "description": "AgentFleet Orchestrate AI coding agents across every machine you own.",
+      "language": "TypeScript",
+      "stars": 1,
+      "updatedAt": "2026-05-03T10:47:04Z",
+      "topics": [
+        "agent",
+        "ai",
+        "coding-agent",
+        "devtools",
+        "distributed",
+        "onedrive",
+        "orchestration",
+        "typescript"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "date": "2026-05-17T02:31:54.187Z",
+      "source": "luckydraw.daomar.dev",
+      "title": "Lucky Draw — 15 public URLs discovered",
+      "summary": "Lucky Draw Bot A free Microsoft Teams app that runs fair, transparent prize draws inside any channel.",
+      "url": "https://luckydraw.daomar.dev/"
+    },
+    {
+      "date": "2026-05-16T04:11:01Z",
+      "source": "daomar-dev.github.io · commit",
+      "title": "Merge pull request #1 from daomar-dev/copilot/add-landing-page-for-daomar-dev",
+      "summary": "By chenxizhang",
+      "url": "https://github.com/daomar-dev/daomar-dev.github.io/commit/b9e72305006010804c1092bb09d9e2ef2dbaa483"
+    },
+    {
+      "date": "2026-05-16T04:07:27Z",
+      "source": "daomar-dev.github.io · commit",
+      "title": "Refresh Daomar landing page and add dynamic pages",
+      "summary": "By Copilot",
+      "url": "https://github.com/daomar-dev/daomar-dev.github.io/commit/60ebe83308e44ac822a333f68bc8f2096ee5ca13"
+    },
+    {
+      "date": "2026-05-03T10:55:33Z",
+      "source": ".github · commit",
+      "title": "Create README.md",
+      "summary": "By chenxizhang",
+      "url": "https://github.com/daomar-dev/.github/commit/6961cfffac56c0d809d77a6e6e7ff45ff5643280"
+    },
+    {
+      "date": "2026-05-03T10:55:17Z",
+      "source": ".github · commit",
+      "title": "Initial commit",
+      "summary": "By chenxizhang",
+      "url": "https://github.com/daomar-dev/.github/commit/22203c47fbf5ecae85eade4a1437903bb2f2ebcc"
+    },
+    {
+      "date": "2026-05-03T10:46:47Z",
+      "source": "agentfleet · commit",
+      "title": "chore(donate): update WeChat donation QR code",
+      "summary": "By chenxizhang",
+      "url": "https://github.com/daomar-dev/agentfleet/commit/30fd7df5e9217305c387b2649cd53ae5cc10dbd5"
+    },
+    {
+      "date": "2026-05-02T12:21:25Z",
+      "source": "agentfleet · release",
+      "title": "agentfleet v3.1.5",
+      "summary": "- feat: directory-based result storage with artifact extraction Full Changelog : https://github.com/daomar-dev/agentfleet/compare/v3.1.4...v3.1.5",
+      "url": "https://github.com/daomar-dev/agentfleet/releases/tag/v3.1.5"
+    },
+    {
+      "date": "2026-05-02T12:20:24Z",
+      "source": "agentfleet · commit",
+      "title": "feat: directory-based result storage with artifact extraction",
+      "summary": "By chenxizhang",
+      "url": "https://github.com/daomar-dev/agentfleet/commit/c19c73b1ae16d16b1e75ce26e13ebaaf6cc63291"
+    },
+    {
+      "date": "2026-05-02T11:28:08Z",
+      "source": "agentfleet · release",
+      "title": "agentfleet v3.1.4",
+      "summary": "What's Changed Zero-friction first run - Auto-init on first run/submit : No more manual agentfleet init — AgentFleet automatically detects OneDrive and initializes the workspace on first use - Default backend changed to OneDrive : init now…",
+      "url": "https://github.com/daomar-dev/agentfleet/releases/tag/v3.1.4"
+    },
+    {
+      "date": "2026-05-02T11:27:46Z",
+      "source": "agentfleet · commit",
+      "title": "feat: auto-init on first run, agent-first docs rewrite",
+      "summary": "By chenxizhang",
+      "url": "https://github.com/daomar-dev/agentfleet/commit/2a06a0398568dfcda439302f31ce4683f65b59c9"
+    },
+    {
+      "date": "2026-04-11T12:05:14Z",
+      "source": "daomar-dev.github.io · commit",
+      "title": "feat: add daomar landing page",
+      "summary": "By chenxizhang",
+      "url": "https://github.com/daomar-dev/daomar-dev.github.io/commit/8f55d9f5fc01a9d8f7a188f781c9d20185711ee0"
+    }
+  ]
+}
