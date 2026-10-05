@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T09:47:44.008Z",
+  "generatedAt": "2026-10-05T10:26:24.774Z",
   "org": "daomar-dev",
   "repos": [
     {
@@ -9,7 +9,7 @@
       "description": "daomar.dev landing site The static landing page for daomar.dev — an independent AI venture studio.",
       "language": "HTML",
       "stars": 0,
-      "updatedAt": "2026-10-03T09:09:06Z",
+      "updatedAt": "2026-10-04T09:47:45Z",
       "topics": []
     },
     {
@@ -44,11 +44,18 @@
   ],
   "items": [
     {
-      "date": "2026-10-04T09:47:43.119Z",
+      "date": "2026-10-05T10:26:24.094Z",
       "source": "luckydraw.daomar.dev",
       "title": "Lucky Draw — 15 public URLs discovered",
       "summary": "Lucky Draw Bot A free Microsoft Teams app that runs fair, transparent prize draws inside any channel.",
       "url": "https://luckydraw.daomar.dev/"
+    },
+    {
+      "date": "2026-10-04T09:47:44Z",
+      "source": "daomar-dev.github.io · commit",
+      "title": "chore(data): daily refresh 2026-10-04",
+      "summary": "By daomar-bot",
+      "url": "https://github.com/daomar-dev/daomar-dev.github.io/commit/d0517a0b05e2a29e4860fd936f9f35976c6c4a84"
     },
     {
       "date": "2026-10-03T09:09:05Z",
@@ -63,13 +70,6 @@
       "title": "chore(data): daily refresh 2026-10-02",
       "summary": "By daomar-bot",
       "url": "https://github.com/daomar-dev/daomar-dev.github.io/commit/802fa9f62f46250350e01fb62fa4c973ae9b86cd"
-    },
-    {
-      "date": "2026-10-01T10:08:02Z",
-      "source": "daomar-dev.github.io · commit",
-      "title": "chore(data): daily refresh 2026-10-01",
-      "summary": "By daomar-bot",
-      "url": "https://github.com/daomar-dev/daomar-dev.github.io/commit/1a322758089965afb4350d4b5d35bb09fd8ee105"
     },
     {
       "date": "2026-05-03T10:55:33Z",
